@@ -1,10 +1,10 @@
 /* eslint linebreak-style: 0 */
 import React, { Component } from 'react';
-import './App.css';
-import { Button } from './components/Button';
-import { Input } from './components/Input';
+import './Calculator.css';
+import { Button } from './Button';
+import { Input } from './Input';
 
-class App extends Component {
+class Calculator extends Component {
   constructor(props) {
     super(props);
 
@@ -56,4 +56,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Calculator;
