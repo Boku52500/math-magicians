@@ -16,7 +16,8 @@ class App extends Component {
     return (
       <div className="app">
         <div className="calc-wrapper">
-          <Input input={this.state.input}></Input>
+          { /* eslint-disable-next-line react/destructuring-assignment */ }
+          <Input input={this.state.input} />
           <div className="row">
             <Button>AC</Button>
             <Button>+/-</Button>
