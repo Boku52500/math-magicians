@@ -1,3 +1,4 @@
+/* eslint linebreak-style: 0 */
 import React, { Component } from 'react';
 import './App.css';
 import { Button } from './components/Button';
