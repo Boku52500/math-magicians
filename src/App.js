@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import './App.css';
-import { Button } from './components/Button';
-import { Input } from './components/Input';
+import React, { Component } from "react";
+import "./App.css";
+import { Button } from "./components/Button";
+import { Input } from "./components/Input";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      input: '',
+      input: "",
     };
   }
 
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className="calc-wrapper">
-          { /* eslint-disable-next-line react/destructuring-assignment */ }
+          {/* eslint-disable-next-line react/destructuring-assignment */}
           <Input input={this.state.input} />
           <div className="row">
             <Button>AC</Button>
@@ -56,3 +56,4 @@ class App extends Component {
 }
 
 export default App;
+
