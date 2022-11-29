@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Awesome Books Project.
+# Math Magicians Project.
 
 > This is a Math Magicians project.
 
