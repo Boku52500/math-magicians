@@ -15,3 +15,92 @@
   display: flex;
   width: 100%;
 }
+
+.button-wrapper {
+  cursor: pointer;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+  font-size: 1.4em;
+  background-color: lightgray;
+  color: black;
+  flex: 1;
+  outline: 1px solid rgb(124, 124, 124);
+}
+
+.button-wrapper:hover {
+  cursor: pointer;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+  font-size: 1.4em;
+  background-color: white;
+  color: black;
+  flex: 1;
+  outline: 1px solid rgb(124, 124, 124);
+}
+
+.button-wrapper-orange {
+  cursor: pointer;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+  font-size: 1.4em;
+  background-color: orange;
+  color: black;
+  flex: 1;
+  outline: 1px solid rgb(124, 124, 124);
+}
+
+.button-wrapper-orange:hover {
+  cursor: pointer;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+  font-size: 1.4em;
+  background-color: white;
+  color: black;
+  flex: 1;
+  outline: 1px solid rgb(124, 124, 124);
+}
+
+.button-wrapper-0 {
+  cursor: pointer;
+  width: 50%;
+  color: black;
+  outline: 1px solid rgb(124, 124, 124);
+  font-weight: lighter;
+  font-size: 1.4em;
+  background-color: lightgray;
+}
+
+.button-wrapper-0:hover {
+  cursor: pointer;
+  width: 50%;
+  color: black;
+  outline: 1px solid rgb(124, 124, 124);
+  font-weight: lighter;
+  font-size: 1.4em;
+  background-color: white;
+}
+
+.input {
+  height: 4em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.4em;
+  background-color: rgb(109, 108, 108);
+  color: white;
+  padding: 0.5em;
+  outline: 1px solid #888;
+}
