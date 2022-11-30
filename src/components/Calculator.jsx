@@ -1,66 +1,175 @@
 /* eslint linebreak-style: 0 */
-import React, { Component } from "react";
-import "./Calculator.css";
-import { Button } from "./Button";
-import { Input } from "./Input";
-import { ClearButton } from "./ClearButton";
-import * as math from 'mathjs'
+import React, { Component } from 'react';
+import calculate from '../logic/calculate';
+import './Calculator.css';
 
 class Calculator extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      input: "",
+      toatl: '0',
+      next: null,
+      operation: null,
     };
+    this.onClickHandler = this.onClickHandler.bind(this);
   }
 
-  addToInput = val => {
-    this.setState({input: this.state.input + val})
-  }
-
-  handleEqual = () => {
-    this.setState({input: math.evaluate(this.state.input)})
-  }
+  onClickHandler = (e) => {
+    const values = calculate(this.state, e.target.innerText);
+    this.setState(values);
+  };
 
   render() {
+    const { total, next, operation } = this.state;
     return (
       <div className="app">
         <div className="calc-wrapper">
-          {/* eslint-disable-next-line react/destructuring-assignment */}
-          <Input input={this.state.input} />
+          <div className="output">
+            <div className="input">{` ${total || ''} ${operation || ''} ${next || ''}`}</div>
+          </div>
           <div className="row">
-            <ClearButton handleClear={() => this.setState({ input: "" })}>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper"
+            >
               AC
-            </ClearButton>
-            <Button handleClick={this.addToInput}>+/-</Button>
-            <Button handleClick={this.addToInput}>%</Button>
-            <Button handleClick={this.addToInput}>/</Button>
+            </button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper"
+            >
+              +/-
+            </button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper"
+            >
+              %
+            </button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper-orange"
+            >
+              ÷
+            </button>
           </div>
           <div className="row">
-            <Button handleClick={this.addToInput}>7</Button>
-            <Button handleClick={this.addToInput}>8</Button>
-            <Button handleClick={this.addToInput}>9</Button>
-            <Button handleClick={this.addToInput}>*</Button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper"
+            >
+              7
+            </button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper"
+            >
+              8
+            </button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper"
+            >
+              9
+            </button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper-orange"
+            >
+              x
+            </button>
           </div>
           <div className="row">
-            <Button handleClick={this.addToInput}>4</Button>
-            <Button handleClick={this.addToInput}>5</Button>
-            <Button handleClick={this.addToInput}>6</Button>
-            <Button handleClick={this.addToInput}>-</Button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper"
+            >
+              4
+            </button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper"
+            >
+              5
+            </button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper"
+            >
+              6
+            </button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper-orange"
+            >
+              -
+            </button>
           </div>
           <div className="row">
-            <Button handleClick={this.addToInput}>1</Button>
-            <Button handleClick={this.addToInput}>2</Button>
-            <Button handleClick={this.addToInput}>3</Button>
-            <Button handleClick={this.addToInput}>+</Button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper"
+            >
+              1
+            </button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper"
+            >
+              2
+            </button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper"
+            >
+              3
+            </button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper-orange"
+            >
+              +
+            </button>
           </div>
           <div className="row">
-            <div className="zero">
-              <Button handleClick={this.addToInput}>0</Button>
-            </div>
-            <Button handleClick={this.addToInput}>.</Button>
-            <Button handleClick={() => this.handleEqual()}>=</Button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper-0"
+            >
+              0
+            </button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper"
+            >
+              .
+            </button>
+            <button
+              onClick={this.onClickHandler}
+              type="button"
+              className="button-wrapper-orange"
+            >
+              =
+            </button>
           </div>
         </div>
       </div>
